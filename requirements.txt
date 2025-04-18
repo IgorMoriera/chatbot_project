@@ -1,0 +1,12 @@
+python-dotenv
+pandas
+PyMuPDF
+chromadb
+sentence-transformers
+transformers
+streamlit
+tqdm
+rich
+requests
+fitz
+langchain
