@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51d00f3e-8931-4e65-a148-3aafb963060a" name="Changes" comment="Load the final files - Functional project">
-      <changelist_data name="Igor Moreira" email="igor.morvale@gmail.com" />
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/chatbot_project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Versoes do chat/app_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/embeddings/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/embeddings/embedder.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/llm/llm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loaders/csv_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loaders/pdf_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loaders/txt_loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/retriever/retriever.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/chroma_store.py" afterDir="false" />
-    </list>
+    <list default="true" id="51d00f3e-8931-4e65-a148-3aafb963060a" name="Changes" comment="Load the final files - Functional project" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +31,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="675ee4f6-65f2-4896-9489-32fa0d09edf1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -71,7 +51,8 @@
     "Python.pdf_loader.executor": "Run",
     "Python.pipeline.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
   <component name="RunManager" selected="Python.pipeline">
@@ -181,8 +162,30 @@
       <option name="project" value="LOCAL" />
       <updated>1745020521753</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Load the final files - Functional project">
+      <option name="closed" value="true" />
+      <created>1745020688317</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1745020688317</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="load some itens" />
