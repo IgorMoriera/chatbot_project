@@ -178,7 +178,7 @@ Abra no navegador: `http://localhost:8501`
 
 ## 📄 Licença
 
-MIT © [Seu Nome]
+MIT © Igor Moreira
 Sinta‑se à vontade para usar, modificar e distribuir este projeto livremente!
 
 ---

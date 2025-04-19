@@ -67,10 +67,10 @@ Contexto:
 Pergunta: {pergunta}
 
 Instruções:
-1. Responda de forma clara e detalhada
-2. Baseie sua resposta estritamente no contexto fornecido
-3. Se a resposta não estiver no contexto, diga "Não encontrei essa informação nos documentos"
-4. Use português claro e formal
+1. Responda de forma clara e detalhada, procure elaborar bem as respsotas.
+2. Baseie sua resposta estritamente no contexto fornecido.
+3. Se a resposta estiver no contexto, diga informe de qual arquivo foi tirado.
+4. Use português claro e formal.
 
 Resposta:"""
 
@@ -94,6 +94,7 @@ Resposta:"""
 
     except requests.exceptions.Timeout:
         return "Erro: Tempo esgotado ao consultar o modelo"
+
     except Exception as e:
         return f"Erro ao conectar com o modelo: {e}"
 

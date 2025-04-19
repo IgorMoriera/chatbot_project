@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51d00f3e-8931-4e65-a148-3aafb963060a" name="Changes" comment="Load the final files - Functional project" />
+    <list default="true" id="51d00f3e-8931-4e65-a148-3aafb963060a" name="Changes" comment="Load the final files - Functional project">
+      <change afterPath="$PROJECT_DIR$/app_config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app_config/app_cotext.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/telegram_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/length.bin" beforeDir="false" afterPath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/length.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/llm/llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/llm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,9 +63,14 @@
     "Python.pipeline.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\igorm\OneDrive\Área de Trabalho\chatbot_project\app_config" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.pipeline">
     <configuration name="chroma_store" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="chatbot_project" />
@@ -170,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745020688317</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Load the final files - Functional project">
+      <option name="closed" value="true" />
+      <created>1745020972888</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745020972888</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
