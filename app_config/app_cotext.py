@@ -25,7 +25,8 @@ load_dotenv()
 # ——————————————————————————————
 # Parâmetros globais
 # Quantidade de chunks a recuperar por pergunta
-K_RESULTS = int(os.getenv("K_RESULTS", 3))
+K_RESULTS = int(os.getenv("K_RESULTS"))
+
 # Limite de caracteres do contexto final a enviar ao LLM
 MAX_CONTEXT_LENGTH = 2000
 
@@ -41,6 +42,7 @@ except ImportError as e:
     st.stop()
 
 
+# ——————————————————————————————
 def get_context(
     query: str,
     k: int = K_RESULTS

@@ -1,30 +1,15 @@
 """
-store/chroma_store.py
+app.py
 
-Este módulo abstrai toda a lógica de comunicação com o ChromaDB, oferecendo:
-
-1. Configuração e inicialização do cliente Chroma
-   - Lê variáveis de ambiente (URL, caminho de persistência, etc.)
-   - Instancia um único cliente global para reutilização
-
-2. Função de embedding de texto
-   - Utiliza o modelo 'all-MiniLM-L6-v2' do SentenceTransformers
-   - Recebe uma lista de strings e retorna uma lista de vetores de embedding
-
-3. Criação e recuperação de coleção (collection)
-   - get_or_create_collection(name: str) → Collection
-   - Verifica se já existe uma coleção com o nome fornecido; se não, cria uma nova
-
-4. Operações sobre a coleção
-   - add_documents(docs: List[Document], collection_name: str)
-     • Converte cada documento em embedding
-     • Insere vetores + metadados na coleção especificada
-   - clear_collection(collection_name: str)
-     • Remove todos os vetores e metadados daquela coleção
-
-Cada função retorna objetos ou dados prontos para uso na camada de aplicação,
-isola o código de baixo nível do ChromaDB e garante que seu pipeline de
-documentos mantenha sempre consistência e persistência de dados.
+Módulo de interface web para o Chatbot Documental Inteligente, incluindo:
+- Configuração e inicialização do Streamlit (título, ícone e layout)
+- Carregamento dos módulos internos (LLM e contexto) com tratamento de erro
+- Injeção de CSS customizado para estilização de mensagens e cabeçalho
+- Renderização do cabeçalho centralizado (logo, título e subtítulo) em HTML puro
+- Gestão de histórico de conversas via 'st.session_state'
+- Campo de entrada de perguntas ('st.chat_input') e botão para limpar histórico
+- Processamento das perguntas: busca de contexto, chamada ao LLM e medição de tempo
+- Exibição das interações com estilos distintos (usuário, bot, erro) e detalhes em expander
 """
 
 import base64
@@ -45,7 +30,7 @@ except ImportError as e:
 # ——————————————————————————————
 # Configura as propriedades gerais da página no Streamlit
 st.set_page_config(
-    page_title="🧠 Chatbot Documental Inteligente",
+    page_title="🧠 Inteligent Documents",
     page_icon="🤖",
     layout="wide"
 )
@@ -168,16 +153,32 @@ with open("logo.png", "rb") as f:
     logo_b64 = base64.b64encode(f.read()).decode()
 
 # ——————————————————————————————
+# Rodapé com seu nome
+footer_html = """
+                <div style="
+                    text-align: left;
+                    margin-top: 2rem;
+                    padding-top: 1rem;
+                    border-top: 1px solid #444;
+                    color: #ffffff;
+                    font-family: Roboto, sans-serif;
+                    font-size: 0.8rem;
+                ">
+                    By: Igor de Paula Souza Moreira
+                </div>
+                """
+st.markdown(footer_html, unsafe_allow_html=True)
+
+# ——————————————————————————————
 # Cabeçalho centralizado em HTML (logo, título e subtítulo)
 st.markdown(f"""
                 <div class="header-container">
                     <img src="data:image/png;base64,{logo_b64}" alt="Logo" />
                     <h1 style="text-align: center; color: #0088CC; font-family: Roboto, sans-serif;">
-                        🧠 Iteligents Documents
+                        🧠 Inteligent Documents
                     </h1>
                     <p style="text-align: center; color: #A3BFFA; font-family: Roboto, sans-serif;">
                         Faça perguntas sobre seus documentos e obtenha respostas contextualizadas
-                    </p>
                 </div>
                 """, unsafe_allow_html=True
             )
@@ -190,13 +191,17 @@ if "history" not in st.session_state:
 # ——————————————————————————————
 # Área de entrada de perguntas com botão de limpar
 with st.container():
-    col1, col2 = st.columns([4, 1])
-    with col1:
+    # Cria três colunas: uma vazia à esquerda, outra ao centro (onde ficará o input) e mais uma vazia à direita
+    col_l, col_c, col_r = st.columns([1, 4, 1])
+
+    # No centro, renderizamos só o chat_input
+    with col_c:
         user_question = st.chat_input("Digite sua pergunta...", key="input")
-    with col2:
-        if st.button("🗑️ Limpar Histórico"):
-            st.session_state.history = []
-            st.rerun()
+
+    # Embaixo, fora do col_c, podemos manter o botão de limpar (ou mover para col_r, se quiser)
+    if st.button("🗑️ Limpar Histórico"):
+        st.session_state.history = []
+        st.experimental_rerun()
 
 # ——————————————————————————————
 # Processa a pergunta do usuário

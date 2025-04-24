@@ -10,13 +10,17 @@ Módulo responsável por orquestrar o fluxo completo de ingestão de documentos:
   6. Apresenta um relatório final com o total de chunks na coleção.
 """
 
+# ——————————————————————————————
+# Bibliotecas
+import os
 from pathlib import Path
 
 from dotenv import load_dotenv
 
 # ——————————————————————————————
-# Carrega variáveis de ambiente do arquivo .env (e.g., CHROMA_PERSIST_DIR)
+# Carrega variáveis de ambiente do arquivo .env
 load_dotenv()
+data_dir = os.getenv("DATA_DIR")
 
 # ——————————————————————————————
 # Importação de loaders para diferentes tipos de arquivo
@@ -40,7 +44,7 @@ else:
     print("           Verifique os logs e reinicie o Chroma se necessário.\n")
 
 
-def ingest_new_files(data_dir: str = "data") -> None:
+def ingest_new_files(data_dir: str = data_dir) -> None:
     """
     Realiza a ingestão incremental de documentos na coleção Chroma.
 
@@ -82,8 +86,8 @@ def ingest_new_files(data_dir: str = "data") -> None:
             if existing and existing.get("metadatas"):
                 print(f"⏭️  Pulando '{file_path.name}' (já indexado)")
                 continue
-        except Exception as e:
-            print(f"⚠️  Erro na verificação de duplicatas: {str(e)}")
+        except Exception as error:
+            print(f"⚠️  Erro na verificação de duplicatas: {str(error)}")
             continue
 
         # — Carregamento de documentos brutos —
@@ -95,8 +99,8 @@ def ingest_new_files(data_dir: str = "data") -> None:
             }[suffix]
             raw_docs = loader(str(file_path))
             print(f"📂  Carregado {len(raw_docs)} documentos de '{file_path.name}'")
-        except Exception as e:
-            print(f"❌  Erro crítico ao ler '{file_path.name}': {str(e)}")
+        except Exception as error:
+            print(f"❌  Erro crítico ao ler '{file_path.name}': {str(error)}")
             continue
 
         # — Chunking e padronização de metadados —
@@ -105,26 +109,26 @@ def ingest_new_files(data_dir: str = "data") -> None:
             for idx, chunk in enumerate(chunks):
                 # Substitui metadata por um dict consistente
                 chunk["metadata"] = {
-                    "source":   file_path.name,
-                    "page":     chunk.get("metadata", {}).get("page", 0),
+                    "source": file_path.name,
+                    "page": chunk.get("metadata", {}).get("page", 0),
                     "chunk_id": f"{file_path.stem}_{idx:04d}"
                 }
                 chunk["id"] = f"{file_path.stem}_{idx:04d}"
-        except Exception as e:
-            print(f"❌  Erro no chunking de '{file_path.name}': {str(e)}")
+        except Exception as error:
+            print(f"❌  Erro no chunking de '{file_path.name}': {str(error)}")
             continue
 
         # — Indexação no ChromaDB —
         try:
             add_documents(chunks)
-            print(f"✅  '{file_path.name}': {len(chunks)} chunks indexados")
+            print(f"☑️  '{file_path.name}': {len(chunks)} chunks indexados")
             total_indexed += len(chunks)
-        except Exception as e:
-            print(f"❌  Falha na indexação de '{file_path.name}': {str(e)}")
+        except Exception as error:
+            print(f"❌  Falha na indexação de '{file_path.name}': {str(error)}")
             continue
 
     # Relatório final de ingestão
-    print(f"\n🏁  Ingestão concluída: {total_indexed} novos chunks de {data_dir}")
+    print(f"\n✅  Ingestão concluída: {total_indexed} novos chunks de {data_dir}")
 
 
 if __name__ == "__main__":
@@ -134,6 +138,6 @@ if __name__ == "__main__":
     # Exibe o total de chunks na coleção após ingestão
     try:
         total_chunks = collection.count()
-        print(f"\n📊 Total de chunks na coleção: {total_chunks}")
+        print(f"📊 Total de chunks na coleção: {total_chunks}")
     except Exception as e:
         print(f"\n⚠️  Não foi possível obter o total de chunks: {str(e)}")

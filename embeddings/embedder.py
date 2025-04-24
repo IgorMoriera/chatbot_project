@@ -5,6 +5,7 @@ Módulo responsável por gerar embeddings a partir de textos usando o SentenceTr
 """
 
 # ——————————————————————————————
+from numpy import ndarray
 from sentence_transformers import SentenceTransformer
 
 # Inicializa o modelo de embeddings all-MiniLM-L6-v2
@@ -12,7 +13,7 @@ _model = SentenceTransformer("all-MiniLM-L6-v2")
 
 
 # ——————————————————————————————
-def embed_texts(texts: list[str]) -> list[list[float]]:
+def embed_texts(texts: list[str]) -> ndarray:
     """
     Converte uma lista de textos em embeddings numéricos.
 

@@ -12,13 +12,15 @@ Módulo de abstração para interação com o ChromaDB, incluindo:
 import os
 
 import chromadb
-from chromadb.utils.embedding_functions import SentenceTransformerEmbeddingFunction
+from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
 from dotenv import load_dotenv
 
 # ——————————————————————————————
 # 1) Carrega variáveis de ambiente do arquivo .env (opções de persistência, URL, etc.)
 load_dotenv()
 persist_dir = os.getenv("CHROMA_PERSIST_DIR", "chroma_db")
+model_name = os.getenv("MODEL_NAME", "sentence-transformers/all-MiniLM-L6-v2")
+hf_api_key = os.getenv("HF_API_KEY")
 
 # ——————————————————————————————
 # 2) Cria o cliente persistente do ChromaDB, armazenando índices em disco
@@ -27,8 +29,9 @@ client = chromadb.PersistentClient(path=persist_dir)
 # ——————————————————————————————
 # 3) Define a função de embedding baseada em SentenceTransformers
 #    Utiliza o modelo 'all-MiniLM-L6-v2' para criar vetores de alta qualidade
-embedding_fn = SentenceTransformerEmbeddingFunction(
-    model_name="all-MiniLM-L6-v2"
+embedding_fn = HuggingFaceEmbeddingFunction(
+    model_name=model_name,
+    api_key=hf_api_key
 )
 
 # ——————————————————————————————
@@ -93,9 +96,10 @@ def limpar_colecao() -> bool:
     """
     try:
         # Deleta todos os documentos que tenham 'source' definido (toda a coleção)
-        collection.delete(where={"source": {"$ne": None}})
+        collection.delete(where={"source": {"$ne": ""}})
         client.persist()
         return True
+
     except Exception as e:
         print(f"❌ Erro na limpeza: {str(e)}")
         return False

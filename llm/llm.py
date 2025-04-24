@@ -17,8 +17,8 @@ load_dotenv()
 
 # ——————————————————————————————
 # URL e modelo padrão para o serviço Ollama
-OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434/api/generate")
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma3:1b")
+OLLAMA_URL = os.getenv("OLLAMA_URL")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL")
 
 # ——————————————————————————————
 # Opções padrão de geração de texto
@@ -95,8 +95,8 @@ Resposta:"""
     except requests.exceptions.Timeout:
         return "Erro: Tempo esgotado ao consultar o modelo"
 
-    except Exception as e:
-        return f"Erro ao conectar com o modelo: {e}"
+    except Exception as error:
+        return f"Erro ao conectar com o modelo: {error}"
 
 
 # ——————————————————————————————

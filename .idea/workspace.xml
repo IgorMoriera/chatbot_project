@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51d00f3e-8931-4e65-a148-3aafb963060a" name="Changes" comment="Load the final files - Functional project">
-      <change afterPath="$PROJECT_DIR$/app_config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_config/app_cotext.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/telegram_bot.py" afterDir="false" />
+    <list default="true" id="51d00f3e-8931-4e65-a148-3aafb963060a" name="Changes" comment="new files + modifications">
+      <change afterPath="$PROJECT_DIR$/prompt_to_model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prompt_to_model/prompt_builder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Versoes do chat/app_2.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/length.bin" beforeDir="false" afterPath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/length.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app_config/app_cotext.py" beforeDir="false" afterPath="$PROJECT_DIR$/app_config/app_cotext.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/data_level0.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/header.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/length.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/44d6bd28-58b0-4a89-88ae-48772c8ac31d/link_lists.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chroma_db/chroma.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/chroma_db/chroma.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/embeddings/embedder.py" beforeDir="false" afterPath="$PROJECT_DIR$/embeddings/embedder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/llm/llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/llm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/chroma_store.py" beforeDir="false" afterPath="$PROJECT_DIR$/store/chroma_store.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,9 +69,11 @@
     "Python.chroma_store.executor": "Run",
     "Python.pdf_loader.executor": "Run",
     "Python.pipeline.executor": "Run",
+    "Python.teste do chromaDB.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.general"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -71,7 +81,7 @@
       <recent name="C:\Users\igorm\OneDrive\Área de Trabalho\chatbot_project\app_config" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.pipeline">
+  <component name="RunManager" selected="Python.chroma_store">
     <configuration name="chroma_store" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="chatbot_project" />
       <option name="ENV_FILES" value="" />
@@ -194,7 +204,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745020972888</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="new files + modifications">
+      <option name="closed" value="true" />
+      <created>1745105120465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745105120465</updated>
+    </task>
+    <task id="LOCAL-00006" summary="new files + modifications">
+      <option name="closed" value="true" />
+      <created>1745105143216</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745105143216</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -214,7 +240,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="load some itens" />
     <MESSAGE value="Load the final files - Functional project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Load the final files - Functional project" />
+    <MESSAGE value="new files + modifications" />
+    <option name="LAST_COMMIT_MESSAGE" value="new files + modifications" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
