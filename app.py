@@ -12,17 +12,17 @@ Módulo de interface web para o Chatbot Documental Inteligente, incluindo:
 - Exibição das interações com estilos distintos (usuário, bot, erro) e detalhes em expander
 """
 
-import base64
 # ——————————————————————————————
 # Biliotecas
 import time
-
+import base64
 import streamlit as st
 
 # Importação de módulos internos
 try:
     from llm.llm import obter_resposta_llama
-    from app_config.app_cotext import get_context
+    from app_config.app_context import get_context
+    from app_config.prompt_builder import build_prompt
 except ImportError as e:
     st.error(f"Erro crítico: módulos não encontrados – {e}")
     st.stop()
@@ -209,17 +209,17 @@ if user_question:
     with st.spinner("Buscando resposta nos documentos..."):
         start_time = time.time()
         try:
+
+            # 1) Recupera contexto, lista de fontes e distância média
             contexto, fontes, distancia_media = get_context(user_question)
-            prompt = (
-                f"Responda à pergunta a seguir com base exclusivamente no tema relacionado à pergunta. "
-                f"Ignore informações de outros temas ou documentos, mesmo que estejam presentes no contexto. "
-                f"Detalhe cada etapa ou ponto mencionado no contexto, explicando o que significa e como aplicá-lo. "
-                f"Não resuma demais; forneça uma explicação completa para cada item. "
-                f"Pergunta: {user_question}\n\n"
-                f"Contexto:\n{contexto}\n\n"
-                f"Responda de forma clara, concisa e detalhada, abordando apenas o tema principal da pergunta."
-            )
+
+            # 2) Monta prompt único reutilizável
+            prompt = build_prompt(user_question, contexto)
+
+            # 4) Gera a resposta via Gemma 3
             resposta = obter_resposta_llama(pergunta=prompt, contexto="")
+
+            # 5) Formata a mensagem de retorno incluindo fontes e distância média
             processing_time = time.time() - start_time
             st.session_state.history.append({
                 "pergunta": user_question,

@@ -7,7 +7,6 @@ do modelo local Gemma.3, montando prompts com contexto recuperado.
 
 # ——————————————————————————————
 import os
-
 import requests
 from dotenv import load_dotenv
 

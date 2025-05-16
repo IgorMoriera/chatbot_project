@@ -14,7 +14,6 @@ Módulo responsável por orquestrar o fluxo completo de ingestão de documentos:
 # Bibliotecas
 import os
 from pathlib import Path
-
 from dotenv import load_dotenv
 
 # ——————————————————————————————

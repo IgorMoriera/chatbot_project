@@ -10,10 +10,9 @@ Módulo de abstração para interação com o ChromaDB, incluindo:
 
 # ——————————————————————————————
 import os
-
 import chromadb
-from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
 from dotenv import load_dotenv
+from chromadb.utils.embedding_functions import HuggingFaceEmbeddingFunction
 
 # ——————————————————————————————
 # 1) Carrega variáveis de ambiente do arquivo .env (opções de persistência, URL, etc.)

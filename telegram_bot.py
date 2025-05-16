@@ -9,11 +9,14 @@ Bridge entre o Telegram e o Chatbot Documental Inteligente:
   - Envia resposta de volta ao usuário no Telegram, incluindo fontes e distância média
 """
 
-# Importação de módulos internos
+# Importação de bibliotecas e módulos internos
 import logging
 import os
 
+from llm.llm import obter_resposta_llama
 from app_config.app_context import get_context
+from app_config.prompt_builder import build_prompt
+
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import (
@@ -24,13 +27,11 @@ from telegram.ext import (
     filters
 )
 
-from llm.llm import obter_resposta_llama
-from prompt_to_model.prompt_builder import build_prompt
 
 # Carrega variáveis de ambiente
 load_dotenv()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-K_RESULTS      = int(os.getenv("K_RESULTS", 3))
+K_RESULTS = int(os.getenv("K_RESULTS", 3))
 
 # Configuração básica de logging
 logging.basicConfig(

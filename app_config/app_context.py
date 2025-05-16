@@ -14,7 +14,6 @@ Fornece uma função avançada de recuperação de contexto que:
 # Bibliotecas
 import os
 from typing import Tuple, List
-
 import streamlit as st
 from dotenv import load_dotenv
 
