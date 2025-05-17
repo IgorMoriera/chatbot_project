@@ -100,33 +100,35 @@ pip install -r requirements.txt
 
 ### 4. Configurar Variáveis de Ambiente
 
-Crie um arquivo \[chamado\] `.env` na raiz do projeto com o seguinte conteúdo:
+1. **Crie** um arquivo chamado `.env` na raiz do seu projeto.  
+2. **Copie** e **cole** o conteúdo abaixo dentro dele.  
+3. **Substitua** cada valor placeholder pelo dado real do seu ambiente.  
+4. **Salve** o arquivo.
 
-```dotenv
-# Diretório dos arquivos
-DATA_DIR=caminho_dos_seus arquivos
+```Variáveis de ambiente
+# Diretório dos arquivos de entrada/saída
+DATA_DIR=/caminho/para/seus/arquivos
 
-# Token do Telegram Bot
-TELEGRAM_TOKEN=seu_token_aqui
+# Token do Telegram Bot (obtido via @BotFather)
+TELEGRAM_TOKEN=SEU_TOKEN_DO_TELEGRAM_AQUI
 
-# Quantos chunks recuperar (opcional)
+# Quantos “chunks” recuperar por requisição (opcional; padrão: 3)
 K_RESULTS=3
 
-# URL e modelo do Ollama/Gemma3
+# Endpoint e modelo para geração via Ollama/Gemma3
 OLLAMA_URL=http://localhost:11434/api/generate
 OLLAMA_MODEL=gemma3:1b
 
-# URL do Modelo e API de leitura (read) - HuggingFace
+# Nome do modelo de embeddings e chave da Hugging Face
 MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
-HF_API_KEY=sua_API_KEY_aqui
+HF_API_KEY=SUA_HUGGINGFACE_API_KEY_AQUI
 
-# Pasta de persistência do Chroma
+# Pasta onde o Chroma vai persistir o banco vetorial
 CHROMA_PERSIST_DIR=chroma_db
 ```
 
-**Nota**: Substitua `seu_token_aqui` pelo token do seu bot do Telegram.
+**Nota**: Substitua `*` pelo token do seu bot do Telegram.
 
----
 
 ## 🚀 Como Usar
 
