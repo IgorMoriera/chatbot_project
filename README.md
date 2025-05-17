@@ -1,5 +1,6 @@
 # 🤖 Chatbot Documental  
-![Python](https://img.shields.io/badge/python-3.11-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Ollama](https://ollama.com-White) ![Hugging Face](https://huggingface.co-Yellow) 
+![Python](https://img.shields.io/badge/python-3.11-blue?logo=python&logoColor=white) ![Ollama](https://img.shields.io/badge/Ollama-local?style=flat&logo=ollama&logoColor=black) ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-yellow?logo=huggingface&logoColor=black) ![License](https://img.shields.io/badge/license-MIT-green)
+
 
 <div align="center">
   <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/logo.png" width="200" height="200" />
