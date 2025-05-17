@@ -2,7 +2,7 @@
 ![Python](https://img.shields.io/badge/python-3.11-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
 <div align="center">
-  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/logo.png" width="150" height="150" />
+  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/logo.png" width="200" height="200" />
 </div>
 
 
