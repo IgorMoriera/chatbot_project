@@ -1,7 +1,6 @@
 # 🤖 Chatbot Documental  
 
-[![Anaconda](https://img.shields.io/badge/Anaconda-Distribution-44A833?logo=anaconda&logoColor=white)](https://www.anaconda.com/) [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/) [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-API-%23F37626?logo=huggingface&logoColor=white)](https://huggingface.co/) [![Ollama](https://img.shields.io/badge/Ollama-Local%20Server-lightgrey?style=flat&logo=ollama&logoColor=black)](https://ollama.com/) [![Gemma3](https://img.shields.io/badge/Gemma3-1b-%23FF6C37?style=flat)](https://ollama.com/models/gemma3)  [![License](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
-
+[![Anaconda](https://img.shields.io/badge/Anaconda-Distribution-%2344A833?logo=anaconda&logoColor=white)](https://www.anaconda.com/) [![Python](https://img.shields.io/badge/Python-3.11-%233776AB?logo=python&logoColor=white)](https://www.python.org/) [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-API-%23FFC107?logo=huggingface&logoColor=black)](https://huggingface.co/) [![Ollama](https://img.shields.io/badge/Ollama-Local%20Server-%23FFFFFF?logo=ollama&logoColor=black)](https://ollama.com/) [![Gemma3](https://img.shields.io/badge/Gemma3-1b-%23ADD8E6?style=flat)](https://ollama.com/models/gemma3) [![License](https://img.shields.io/badge/License-MIT-%23000000)](./LICENSE)
 
 
 <div align="center">
