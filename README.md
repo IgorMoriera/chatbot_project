@@ -24,7 +24,7 @@ Um projeto em **Python 3.11** que implementa um chatbot capaz de responder pergu
 ## 🔍 Arquitetura do Chatbot Documental
 
 <p align="center">
-  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/Arquitetura%20Chatbot.png" width="600" alt="Arquitetura do Chatbot Documental"/>
+  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/Arquitetura%20Chatbot.png" width="720" height="720" alt="Arquitetura do Chatbot Documental"/>
 </p>
 
 O Chatbot Documental foi desenhado em quatro camadas distintas, que juntas garantem a ingestão, indexação, recuperação de contexto e geração de respostas de forma eficiente e coerente.
@@ -37,12 +37,11 @@ A terceira camada diz respeito à **Recuperação de Contexto** por meio de busc
 
 Por fim, na camada de **Geração de Resposta e Interfaces**, o prompt enriquecido vai para o modelo Gemma3, rodando localmente via Ollama. Esse LLM processa o contexto e devolve uma resposta detalhada e relevante. Para entregar essa resposta ao usuário, oferecemos duas interfaces: uma aplicação web em Streamlit, que exibe o chat em um navegador de forma interativa e visualmente agradável, e um bot no Telegram, que permite ao usuário conversar diretamente pelo app de mensagens. Assim, unimos a robustez e precisão do back-end semântico com a praticidade de interfaces conhecidas e acessíveis.
 
-> **Fluxo resumido:**  
+**Fluxo resumido:**  
 > 1. Ingestão e fragmentação dos documentos  
 > 2. Geração e indexação de embeddings no ChromaDB  
 > 3. Busca semântica e montagem de contexto  
 > 4. Geração de resposta pelo LLM e entrega via Streamlit ou Telegram  
-
 
 ---
 
