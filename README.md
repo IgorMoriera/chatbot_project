@@ -1,6 +1,11 @@
 # 🧠 Chatbot Documental  
 ![Python](https://img.shields.io/badge/python-3.11-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
+<div align="center">
+  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/logo.png" width="60" height="60" />
+</div>
+
+
 Um projeto em **Python 3.11** que implementa um chatbot capaz de responder perguntas com base em documentos locais (PDF, CSV e TXT). Este projeto utiliza tecnologias modernas para processar, indexar e gerar respostas a partir de documentos, oferecendo uma interface web (via Streamlit) e mobile (via Telegram) interativa.
 
 ### Tecnologias Utilizadas
