@@ -1,5 +1,5 @@
 # 🤖 Chatbot Documental  
-![Python](https://img.shields.io/badge/python-3.11-blue) ![License](https://img.shields.io/badge/license-MIT-green)
+![Python](https://img.shields.io/badge/python-3.11-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Ollama](https://ollama.com-White) ![Hugging Face](https://huggingface.co-Yellow) 
 
 <div align="center">
   <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/logo.png" width="200" height="200" />
