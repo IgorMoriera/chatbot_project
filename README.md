@@ -24,7 +24,7 @@ Um projeto em **Python 3.11** que implementa um chatbot capaz de responder pergu
 ## 🔍 Arquitetura do Chatbot Documental
 
 <p align="center">
-  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/Arquitetura%20Chatbot.png" width="720" height="350" alt="Arquitetura do Chatbot Documental"/>
+  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/Arquitetura%20Chatbot.png" width="520" height="350" alt="Arquitetura do Chatbot Documental"/>
 </p>
 
 O Chatbot Documental foi desenhado em quatro camadas distintas, que juntas garantem a ingestão, indexação, recuperação de contexto e geração de respostas de forma eficiente e coerente.
