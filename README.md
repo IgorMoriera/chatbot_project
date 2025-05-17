@@ -23,11 +23,11 @@ Um projeto em **Python 3.11** que implementa um chatbot capaz de responder pergu
 
 ## 🔍 Arquitetura do Chatbot Documental
 
+O Chatbot Documental foi desenhado em quatro camadas distintas, que juntas garantem a ingestão, indexação, recuperação de contexto e geração de respostas de forma eficiente e coerente.
+
 <p align="center">
   <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/Arquitetura%20Chatbot.png" width="620" height="300" alt="Arquitetura do Chatbot Documental"/>
 </p>
-
-O Chatbot Documental foi desenhado em quatro camadas distintas, que juntas garantem a ingestão, indexação, recuperação de contexto e geração de respostas de forma eficiente e coerente.
 
 A primeira camada é responsável pela **Ingestão e Chunking**. Aqui, o sistema varre a pasta `data/` identificando todos os arquivos nos formatos PDF, CSV e TXT. Cada documento é então fragmentado em pedaços menores — chamados *chunks* — usando a biblioteca LangChain, de modo a manter cada fatia em um tamanho aproximado de 500 tokens. Essa etapa de divisão é fundamental para que o modelo de embeddings consiga capturar detalhes semânticos de cada trecho sem ultrapassar os limites de contexto. Em seguida, cada chunk é transformado em um vetor numérico de alta dimensão (por exemplo, `[-0.0101, -0.0101, 0.0101, …]`), que será a representação semântica daquele pedaço de texto.
 
@@ -36,6 +36,10 @@ Na segunda camada, conhecida como **Armazenamento Vetorial**, utilizamos o Chrom
 A terceira camada diz respeito à **Recuperação de Contexto** por meio de buscas semânticas. Quando um usuário envia uma pergunta, nós primeiro convertemos esse texto em um embedding, usando o mesmo modelo e dimensão dos vetores de documento. Esse vetor de consulta é então usado para interrogar o ChromaDB em busca dos N chunks mais próximos semanticamente. Ao obter esses trechos, montamos um prompt que combina a pergunta original com os extratos de texto selecionados — cada um acompanhado de sua referência de arquivo e página — a fim de fornecer ao modelo de linguagem toda a informação contextual necessária para gerar uma resposta precisa.
 
 Por fim, na camada de **Geração de Resposta e Interfaces**, o prompt enriquecido vai para o modelo Gemma3, rodando localmente via Ollama. Esse LLM processa o contexto e devolve uma resposta detalhada e relevante. Para entregar essa resposta ao usuário, oferecemos duas interfaces: uma aplicação web em Streamlit, que exibe o chat em um navegador de forma interativa e visualmente agradável, e um bot no Telegram, que permite ao usuário conversar diretamente pelo app de mensagens. Assim, unimos a robustez e precisão do back-end semântico com a praticidade de interfaces conhecidas e acessíveis.
+
+<p align="center">
+  <img src="https://github.com/IgorMoriera/chatbot_project/blob/master/Aplicação.png" width="620" height="300" alt="Aplicação via WEB e/ou Telegram"/>
+</p>
 
 **Fluxo resumido:**  
 > 1. Ingestão e fragmentação dos documentos  
